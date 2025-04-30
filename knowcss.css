@@ -1,0 +1,138 @@
+/* Resetting default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply flexbox to make the footer stick to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #0c0924;
+}
+
+/* Main content will grow to fill available space */
+main {
+    flex: 1;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    align-items: center;
+    background-color: #0c0924; /* Set the background color to green */
+    padding: 15px; /* Add some padding for better spacing */
+    color: white;
+}
+
+nav h1 {
+    display: none; /* Hide the heading if you don't want it at the top */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px; /* Add spacing between the buttons */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: rgb(255, 255, 255); /* Ensure the text color contrasts with the background */
+    text-decoration: none; /* Remove underline */
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 15px; /* Add padding for a button-like feel */
+    border-radius: 5px; /* Add rounded corners for modern design */
+    transition: background-color 0.3s; /* Smooth hover transition */
+    font-family: "Capitals";
+}
+
+nav a:hover {
+    background-color: #a6a0ff; /* Darker green on hover */
+}
+
+.main-content {
+    background-color: #1a1a2e; /* New background color for the cert content */
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.header-title {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.header-title {
+    text-align: center; /* Center the text */
+    background-color: #0c0924; /* Match the navigation background color */
+    color: rgb(255, 255, 255); /* Ensure text contrasts with the background */
+    padding: 20px; /* Add padding for spacing */
+    font-size: 36px; /* Make the text large */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 0; /* Remove default margin */
+    border-bottom: 3px solid #0c0924; /* Add a subtle border for style */
+    font-family: "Capitals";
+}
+.tag1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131136; /* Optional: Add a background color */
+    height: auto; /* Adjust as needed based on your image dimensions */
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.certification-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cert-image {
+    max-width: 70%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.arrow {
+    background-color: #fff06d;
+    color: #0c0924;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.arrow:hover {
+    background-color: #a6a0ff;
+    transform: scale(1.1);
+}

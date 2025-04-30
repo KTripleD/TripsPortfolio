@@ -1,0 +1,169 @@
+/* Resetting default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #fff06d;
+    background-color: #0c0924;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    align-items: center;
+    background-color: #0c0924; /* Set the background color to green */
+    padding: 15px; /* Add some padding for better spacing */
+    color: white;
+}
+
+nav h1 {
+    display: none; /* Hide the heading if you don't want it at the top */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px; /* Add spacing between the buttons */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: rgb(255, 255, 255); /* Ensure the text color contrasts with the background */
+    text-decoration: none; /* Remove underline */
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 15px; /* Add padding for a button-like feel */
+    border-radius: 5px; /* Add rounded corners for modern design */
+    transition: background-color 0.3s; /* Smooth hover transition */
+    font-family: "Capitals";
+}
+
+nav a:hover {
+    background-color: #a6a0ff; /* Darker green on hover */
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131136; /* Optional: Add a background color */
+    height: auto; /* Adjust as needed based on your image dimensions */
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 1px 40px rgb(3, 3, 0); /* Yellow shadow effect */
+}
+
+.hero img {
+    max-width: 50%; /* Restrict size to avoid it looking too large */
+    height: auto;
+    border-radius: 10px; /* Add a slight curve to the image */
+}
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    }
+
+    .hero img {
+        max-width: 100%; /* Allow full width on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        gap: 10px;
+    }
+}
+.contact {
+    background-color: #0c0924; /* Match the overall theme */
+    padding: 30px;
+    color: white;
+    text-align: center;
+}
+
+.contact p {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+.portfolio {
+    background-color: #161333; /* Add a subtle background color */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px; /* Smooth edges for modern design */
+}
+.about {
+    padding: 50px 20px; /* Top/bottom padding and some side padding */
+    text-align: center;
+    max-width: 800px; /* Limit the width of the content */
+    margin: 0 auto; /* Center the section horizontally */
+    line-height: 1.6; /* Improve text readability */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    gap: 20px; /* Space between items */
+    margin: 0 auto; /* Center the grid */
+    max-width: 900px; /* Adjust max width for 3 columns */
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 202, 40, 0.5); /* Add a glowing effect */
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.header-title {
+    text-align: center; /* Center the text */
+    background-color: #0c0924; /* Match the navigation background color */
+    color: rgb(255, 255, 255); /* Ensure text contrasts with the background */
+    padding: 20px; /* Add padding for spacing */
+    font-size: 36px; /* Make the text large */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 0; /* Remove default margin */
+    border-bottom: 3px solid #0c0924; /* Add a subtle border for style */
+    font-family: "Capitals";
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+.fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
