@@ -23,3 +23,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".video-trigger").forEach(img => {
+        img.addEventListener("click", function () {
+            const videoSrc = this.getAttribute("data-video");
+
+            // Create overlay
+            const overlay = document.createElement("div");
+            overlay.classList.add("video-overlay");
+
+            // Create video element
+            const video = document.createElement("video");
+            video.src = videoSrc;
+            video.controls = true;
+            video.autoplay = true;
+            video.classList.add("fullscreen-video");
+
+            overlay.appendChild(video);
+            document.body.appendChild(overlay);
+
+            // Close overlay on click outside video
+            overlay.addEventListener("click", function (e) {
+                if (e.target === overlay) {
+                    document.body.removeChild(overlay);
+                }
+            });
+        });
+    });
+});
