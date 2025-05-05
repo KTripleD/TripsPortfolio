@@ -155,4 +155,9 @@ nav a:hover {
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 }
-  
+.fullscreen-image {
+    width: 80vw;
+    height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
