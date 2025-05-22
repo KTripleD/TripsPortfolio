@@ -3,9 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const leftArrow = document.querySelector(".left-arrow");
     const rightArrow = document.querySelector(".right-arrow");
 
-    // Images 1–11 have no videos, just larger images; 12–15 have video
     const imageVideoPairs = [
-        { src: "assets/Know1.png", type: "image" },
+        {
+            src: "assets/Know1.png",
+            type: "carousel",
+            carousel: [
+                "assets/Know1.png",
+                "assets/Know1.1.png",
+                "assets/Know1.2.png"
+            ]
+        },
         { src: "assets/Know2.png", type: "image" },
         { src: "assets/Know3.png", type: "image" },
         { src: "assets/Know4.png", type: "image" },
@@ -28,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const item = imageVideoPairs[currentIndex];
         currentImg.src = item.src;
         currentImg.setAttribute("data-type", item.type);
-        currentImg.setAttribute("data-src", item.type === "video" ? item.video : item.src);
-        currentImg.alt = `Knowledge ${currentIndex + 1}`;
+        currentImg.setAttribute("data-src", item.video || item.link || item.src);
+        currentImg.setAttribute("data-index", currentIndex);
     }
 
     leftArrow.addEventListener("click", () => {
@@ -45,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentImg.addEventListener("click", function () {
         const type = currentImg.getAttribute("data-type");
         const src = currentImg.getAttribute("data-src");
+        const index = parseInt(currentImg.getAttribute("data-index"));
 
         const overlay = document.createElement("div");
         overlay.classList.add("video-overlay");
@@ -56,6 +64,20 @@ document.addEventListener("DOMContentLoaded", function () {
             video.autoplay = true;
             video.classList.add("fullscreen-video");
             overlay.appendChild(video);
+        } else if (type === "carousel") {
+            let carouselIndex = 0;
+            const carouselImages = imageVideoPairs[index].carousel;
+
+            const img = document.createElement("img");
+            img.src = carouselImages[carouselIndex];
+            img.classList.add("fullscreen-image");
+            overlay.appendChild(img);
+
+            img.addEventListener("click", (e) => {
+                e.stopPropagation();
+                carouselIndex = (carouselIndex + 1) % carouselImages.length;
+                img.src = carouselImages[carouselIndex];
+            });
         } else {
             const img = document.createElement("img");
             img.src = src;
