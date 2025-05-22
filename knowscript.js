@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { src: "assets/Know12.png", type: "video", video: "assets/video12.mp4" },
         { src: "assets/Know13.png", type: "video", video: "assets/video13.mp4" },
         { src: "assets/Know14.png", type: "video", video: "assets/video14.mp4" },
-        { src: "assets/Know15.png", type: "video", video: "assets/video15.mp4" },
+        { src: "assets/Know15.png", type: "image" },
     ];
 
     let currentIndex = 0;
